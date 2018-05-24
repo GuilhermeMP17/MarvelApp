@@ -1,11 +1,23 @@
-<ion-header>
+<!-- <ion-header>
   <ion-navbar>
     <ion-title>
       About
     </ion-title>
   </ion-navbar>
-</ion-header>
+</ion-header> -->
 
 <ion-content padding>
-
+    <ion-card>
+        
+      <img src="{{hero.thumb}}"/>
+  
+      <ion-card-content>
+        <ion-card-title>
+            {{hero.name}}
+        </ion-card-title>
+        <p>
+            {{hero.description}}
+        </p>
+      </ion-card-content>
+    </ion-card>
 </ion-content>

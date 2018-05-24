@@ -1,17 +1,25 @@
-<ion-header>
+<!-- <ion-header>
   <ion-navbar>
     <ion-title>Home</ion-title>
   </ion-navbar>
-</ion-header>
+</ion-header> -->
 
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
-</ion-content>
+<ion-content>
+  <ion-content class="card-background-page">
+    <ion-card *ngFor="let hero of heroes">
+      <img (click)="getDescription(hero.id)" src="{{hero.thumbnail.path}}.{{hero.thumbnail.extension}}" />
+      <div (click)="getDescription(hero.id)" class="card-title">{{hero.name}}</div>
+    </ion-card>
+    <ion-infinite-scroll (ionInfinite)="getHeros($event)">
+      <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+
+    <!-- <ion-list>
+    <ion-item class="hero" (click)="getDescription(hero.id)" *ngFor="let hero of heroes">
+      <ion-avatar item-left>
+        <img src="{{hero.thumbnail.path}}.{{hero.thumbnail.extension}}">
+      </ion-avatar>
+      <h2>{{hero.name}}</h2>
+    </ion-item>
+  </ion-list> -->
+  </ion-content>
