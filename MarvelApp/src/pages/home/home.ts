@@ -16,6 +16,7 @@ export class HomePage {
   public heroes: any;
   public limit: number = 5;
   public offset: number =5;
+  public searchQuery: string = '';
   @ViewChild(InfiniteScroll) infiniteScroll: InfiniteScroll;
 
   constructor(
@@ -52,6 +53,20 @@ export class HomePage {
         }
       });
   }
+
+  searchHeroes(searchQuery) {
+    console.log(this.common.encodeQueryData(searchQuery));
+    let usersObservable: Observable<[any]>;
+    usersObservable = this.heroProvider.getHeroAll(this.common.encodeQueryData(searchQuery));
+    this.obj =[];
+    this.heroes=[];
+    usersObservable.subscribe(
+      data => {
+        this.obj = data;
+        this.heroes = this.obj.data.results;
+        }
+      );
+  }
   getHeros() {
     setTimeout(() => {
       this.limit = 5;
@@ -63,6 +78,18 @@ export class HomePage {
     this.navCtrl.push('DescriptionPage', {
       id: id
     })
+  }
+
+  onSearchChange(searchQuery) {
+    
+    if(searchQuery || searchQuery.trim() != '' ){
+      setTimeout(() => {
+        this.searchHeroes({orderBy: 'name', nameStartsWith: searchQuery});
+      }, 200)
+    }
+    if(searchQuery || searchQuery.trim() == '' ){
+      this.searchHeroes({orderBy: 'name', limit: this.limit});
+    }
   }
 
 }
