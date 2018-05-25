@@ -13,6 +13,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HeroProvider } from '../providers/hero/hero';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonFunctionsProvider } from '../providers/common-functions/common-functions';
+import { WelcomePage } from '../pages/welcome/welcome';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CommonFunctionsProvider } from '../providers/common-functions/common-fu
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    WelcomePage
   ],
   imports: [
     BrowserModule,
@@ -33,7 +35,8 @@ import { CommonFunctionsProvider } from '../providers/common-functions/common-fu
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    WelcomePage
   ],
   providers: [
     StatusBar,

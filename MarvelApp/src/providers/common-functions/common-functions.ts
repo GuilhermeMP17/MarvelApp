@@ -10,8 +10,9 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class CommonFunctionsProvider {
 
-  constructor(public http: HttpClient) {
-    console.log('Hello CommonFunctionsProvider Provider');
+  constructor(
+    public http: HttpClient
+  ) {
   }
 
   encodeQueryData(data) {

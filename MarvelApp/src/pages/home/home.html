@@ -4,7 +4,6 @@
   </ion-navbar>
 </ion-header> -->
 
-<ion-content>
   <ion-content class="card-background-page">
     <ion-card *ngFor="let hero of heroes">
       <img (click)="getDescription(hero.id)" src="{{hero.thumbnail.path}}.{{hero.thumbnail.extension}}" />

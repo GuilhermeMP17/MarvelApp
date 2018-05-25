@@ -20,7 +20,7 @@ export class HeroProvider {
   ) { }
 
   getHeroAll(filter: string): Observable<any> {
-    this.presentLoading();
+    //this.presentLoading();
     let md5 = new Md5();
     var timestamp = Number(new Date());
     var hash = Md5.hashStr(timestamp + '788109501550b61f31921c8668c3be88cc89ea321b6da468e61a1137f99e8e59af9d7404');

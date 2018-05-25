@@ -39,6 +39,7 @@ export class HomePage {
           this.obj.data.results.forEach(element => {
             this.heroes.push(element);
           });
+          this.offset += 5;
         }
         else{
           this.heroes = this.obj.data.results;
@@ -53,10 +54,9 @@ export class HomePage {
   }
   getHeros() {
     setTimeout(() => {
-      this.limit = 2;
+      this.limit = 5;
       this.getAllHeroes({limit:this.limit, offset: this.offset});
     }, 500);
-      this.offset += 2;
   }
 
   getDescription(id){
