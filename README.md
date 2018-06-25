@@ -14,6 +14,6 @@ cd MarvelApp
 
 npm intall
 
-npm start
+ionic serve
 
 pronto, agora é só visualizar o projeto no Google Chrome.
