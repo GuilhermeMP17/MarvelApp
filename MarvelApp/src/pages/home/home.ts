@@ -1,11 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, InfiniteScroll } from 'ionic-angular';
+import { NavController, InfiniteScroll } from 'ionic-angular';
 import { HeroProvider } from '../../providers/hero/hero';
 import { Observable } from 'rxjs/Observable';
 import { CommonFunctionsProvider } from '../../providers/common-functions/common-functions'
 import { ViewChild } from '@angular/core';
-import { AboutPage } from '../about/about';
-import { DescriptionPage } from '../description/description';
 
 @Component({
   selector: 'page-home',
@@ -24,7 +22,6 @@ export class HomePage {
     public heroProvider: HeroProvider,
     public common: CommonFunctionsProvider
   ) {
-    //this.infiniteScroll.enable(true);
     this.getAllHeroes({orderBy: 'name', limit: this.limit});
   }
 
@@ -66,12 +63,6 @@ export class HomePage {
         this.heroes = this.obj.data.results;
         }
       );
-  }
-  getHeros() {
-    setTimeout(() => {
-      this.limit = 5;
-      this.getAllHeroes({limit:this.limit, offset: this.offset});
-    }, 500);
   }
 
   getDescription(id){

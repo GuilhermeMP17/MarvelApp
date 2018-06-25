@@ -1,9 +1,3 @@
-<!-- <ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
-</ion-header> -->
-
 <ion-content class="card-background-page">
   <ion-searchbar (ionInput)="onSearchChange($event.target.value)"></ion-searchbar>
   <ion-card *ngFor="let hero of heroes">
@@ -13,13 +7,4 @@
   <ion-infinite-scroll (ionInfinite)="getHeros($event)">
     <ion-infinite-scroll-content></ion-infinite-scroll-content>
   </ion-infinite-scroll>
-
-  <!-- <ion-list>
-    <ion-item class="hero" (click)="getDescription(hero.id)" *ngFor="let hero of heroes">
-      <ion-avatar item-left>
-        <img src="{{hero.thumbnail.path}}.{{hero.thumbnail.extension}}">
-      </ion-avatar>
-      <h2>{{hero.name}}</h2>
-    </ion-item>
-  </ion-list> -->
 </ion-content>
